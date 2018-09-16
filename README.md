@@ -1,6 +1,10 @@
 # BKRouter
 
-BKRouter is a navigator for UIViewControllers on iOS. It navigates the UIViewControllers via a url string.    
+BKRouter is a navigator for UIViewControllers on iOS. It navigates the UIViewControllers via a url string.   
+
+<div align="center">
+<img src="https://raw.githubusercontent.com/ReactComponentKit/BKRouter/master/art/BKRouter.png" />
+</div> 
 
 
 ## Installation
