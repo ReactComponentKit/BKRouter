@@ -47,19 +47,19 @@ class RouteColor: Routerable {
 }
 ```
 
-If you use a host as "myapp", you can map "myapp://color" to RouteColor like as below:
+If you use a host as "myapp", you can map "myapp://color" to RouteColor like below:
 
 ```swift
 Router.shared.map(url: "myapp://color?color=$value", to: RouteColor.self)
 ```
 
-In the abobe code, the $value is the value that is passed via url string. If you have more complex data, you can use userData when you route by using Router like below:
+In the above code, the `$value` is the value that is passed via url string. If you have more complex data, you can use userData when you route by using Router like below:
 
 ```swift
 Router.shared.push(from: self, to: "myapp://color?color=red", userData: ["A": 1])
 ```
 
-You can modulate your app into framework fragments. If DomainA framework has many scene as UIViewController, you can define a Route for routing DomainA.
+You can modulate your app into framework fragments. If DomainA framework has many scenes as UIViewControllers, you can define a Route for routing DomainA.
 
 ```swift
 import Foundation
