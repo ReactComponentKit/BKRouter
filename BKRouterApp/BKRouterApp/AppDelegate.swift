@@ -17,8 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        //Router.shared.add(sideEffect: )
+        #if DEBUG
+        Router.shared.add(sideEffect: LoggingRoute.self)
+        #endif
         Router.shared.map(url: "myapp://main?title=$value&a=$v1&b=v2", to: RouteMain.self)
         Router.shared.map(url: "myapp://color?color=$value", to: RouteColor.self)
         Router.shared.map(url: "myapp://domainA", to: RouteDomainA.self)

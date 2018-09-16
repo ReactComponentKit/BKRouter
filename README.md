@@ -132,3 +132,69 @@ You can route UIViewControllers by using Router.
 }
 ```
 
+## Handle Deeplinking
+
+You can also handle deeplinks using Router. First of all, you should register an URLType scheme for your deeplink.
+
+```xml
+<key>CFBundleURLTypes</key>
+<array>
+   <dict>
+      <key>CFBundleURLName</key>
+      <string>com.github.skyfe79.bkrouter</string>
+      <key>CFBundleURLSchemes</key>
+      <array>
+         <string>myapp</string>
+      </array>
+   </dict>
+</array>
+```
+
+You can handle deeplinks like belows:
+
+```swift
+func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+    Router.shared.replace(to: url.absoluteString, wrapNavigationController: true)
+    return true
+}
+```
+
+### Test Deeplinks with iOS Simulator
+
+You can test deeplinks using iOS simulator from your terminal.
+
+ 1. Run the above example app.
+ 2. Open the terminal.
+ 3. type the below commands.
+
+```
+xcrun simctl openurl booted 'myapp://main'
+xcrun simctl openurl booted 'myapp://domainB?title=HELLO'
+xcrun simctl openurl booted 'myapp://color?color=red'
+xcrun simctl openurl booted 'myapp://domainB?title=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94'
+...
+```
+
+## MIT License
+
+MIT License
+
+Copyright (c) 2018 Sungcheol Kim, https://github.com/ReactComponentKit/BKRouter
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
