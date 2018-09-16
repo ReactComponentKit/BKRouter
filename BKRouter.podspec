@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "BKRouter"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "BKRouter is a navigator for UIViewControllers on iOS"
   s.homepage     = "https://github.com/ReactComponentKit/BKRouter"
   s.license      = "MIT"
