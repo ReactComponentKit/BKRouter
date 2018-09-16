@@ -9,7 +9,6 @@
 import UIKit
 import BKRouter
 
-// nabi://color
 class RouteColor: Routerable {
     static func route(scheme: String, host: String, params: [String : String], userData:[String: Any]?) -> UIViewController? {
         // storyboard

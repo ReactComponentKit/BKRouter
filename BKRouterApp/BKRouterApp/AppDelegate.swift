@@ -24,8 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Router.shared.map(url: "myapp://domainA", to: RouteDomainA.self)
         Router.shared.map(url: "myapp://domainB?title=$value", to: RouteDomainB.self)
         
-        // 하위 그룹을 지원하면 더 복잡해 지지 않을까?
+        
+        // You can make a route map group.
         Router.on("travel").map(url: "myapp://travel?page=$v1&keyword=$v2", to: RouteColor.self)
+        // You can route the travel group
+        // Router.on("travel").push(...)
         
         return true
     }
